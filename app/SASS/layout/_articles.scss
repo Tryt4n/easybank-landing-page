@@ -1,0 +1,63 @@
+@use "../abstracts/colors" as c;
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as *;
+@use "../base/functions" as func;
+
+.articles-section {
+  background: c.$very-light-gray;
+}
+
+.articles {
+  width: v.$desktop-content-max-width;
+  margin-inline: auto;
+  padding-block: 5rem;
+
+  & h2 {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+    @media (width < func.rem(768)) {
+      text-align: center;
+    }
+  }
+
+  &__wrapper {
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: auto;
+    gap: 2rem;
+
+    @media (width < func.rem(768)) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+  }
+
+  & .article-element {
+    background: c.$white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    min-width: func.rem(300);
+
+    & img {
+      width: 100%;
+      aspect-ratio: 408 / 272;
+    }
+
+    &__text-wrapper {
+      padding: 2rem;
+
+      & address {
+        font-size: 0.75rem;
+      }
+
+      & h3 {
+        margin-block: 1rem;
+        transition: v.$main-transition;
+        &:where(:hover, :focus) {
+          color: c.$lime-green;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+
+@font-face {
+  font-family: "Public Sans";
+  font-weight: normal;
+  src: url("/app/assets/fonts/publicsans-regular-webfont.woff2") format("woff2"),
+    url("/app/assets/fonts/publicsans-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-weight: lighter;
+  src: url("/app/assets/fonts/publicsans-light-webfont.woff2") format("woff2"),
+    url("/app/assets/fonts/publicsans-light-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Public Sans";
+  font-weight: bold;
+  src: url("/app/assets/fonts/publicsans-bold-webfont.woff2") format("woff2"),
+    url("/app/assets/fonts/publicsans-bold-webfont.woff") format("woff");
+}

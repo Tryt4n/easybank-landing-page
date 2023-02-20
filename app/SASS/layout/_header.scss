@@ -1,0 +1,89 @@
+@use "../abstracts/colors" as c;
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as *;
+@use "../base/functions" as func;
+
+header {
+  @include flex(row, space-between, center);
+  width: v.$desktop-content-max-width;
+  margin-inline: auto;
+  padding-block: 1rem;
+  height: v.$navbar-height;
+}
+
+.main-navigation > * {
+  color: c.$grayish-blue;
+  transition: v.$main-transition;
+
+  &:where(:hover, :focus) {
+    color: c.$dark-blue;
+  }
+}
+
+@media (width >= func.rem(768)) {
+  .main-navigation > * {
+    position: relative;
+    color: c.$grayish-blue;
+    transition: v.$main-transition;
+    padding-block: 1.75rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: func.rem(3);
+      width: 100%;
+      background: linear-gradient(to right, c.$lime-green, c.$bright-cyan);
+      scale: 0;
+      translate: 0 -50%;
+      transition: v.$main-transition;
+    }
+
+    &:not(:first-child) {
+      margin-left: 1em;
+    }
+
+    &:where(:hover, :focus) {
+      color: c.$dark-blue;
+      &::after {
+        scale: 1;
+      }
+    }
+  }
+
+  .hamburger-btn {
+    display: none;
+  }
+}
+
+@media (width < func.rem(768)) {
+  .main-navigation {
+    position: absolute;
+    top: v.$navbar-height;
+    width: 90dvw;
+    margin-inline: auto;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    @include flex(column);
+    background: c.$very-light-gray;
+    border-radius: 0.25rem;
+    transition: 500ms ease-in-out;
+    opacity: 1;
+    z-index: 100;
+
+    & > * {
+      padding-block: 0.75rem;
+      width: 100%;
+      text-align: center;
+    }
+    &.hide-navigation {
+      z-index: -1;
+      opacity: 0;
+    }
+  }
+
+  .header-btn {
+    display: none;
+  }
+}

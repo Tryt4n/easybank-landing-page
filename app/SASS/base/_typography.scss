@@ -1,0 +1,20 @@
+@forward "./font-face";
+@use "./functions" as func;
+@use "../abstracts/colors" as c;
+
+body {
+  font-family: "Public Sans", sans-serif;
+  font-weight: normal;
+  font-size: func.rem(18);
+  color: c.$grayish-blue;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: c.$dark-blue;
+  font-weight: normal;
+}

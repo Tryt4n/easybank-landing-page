@@ -1,0 +1,97 @@
+@use "../abstracts/colors" as c;
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as *;
+@use "../base/functions" as func;
+
+footer {
+  background: c.$dark-blue;
+  padding-block: 3rem;
+  color: c.$light-grayish-blue;
+
+  & .footer-wrap {
+    width: v.$desktop-content-max-width;
+    margin-inline: auto;
+    @include flex(row, space-between, center);
+    @media (width >= func.rem(768)) {
+      height: func.rem(90);
+    }
+  }
+
+  & .footer-navigation-logo {
+    @include flex(row);
+    gap: 5rem;
+    width: 75%;
+  }
+
+  & .logos {
+    @include flex(column, space-between, center);
+
+    &__socials > *:not(:first-child) {
+      margin-left: 0.5rem;
+    }
+  }
+
+  & .footer-nav {
+    @include flex(row, space-evenly);
+    gap: 5rem;
+    width: 50%;
+    color: c.$white;
+
+    & a {
+      transition: v.$main-transition;
+      &:where(:hover, :focus) {
+        color: c.$lime-green;
+      }
+    }
+
+    &__inner-wrap {
+      @include flex(column);
+      gap: 1rem;
+    }
+  }
+
+  & .footer-btn-wrap {
+    height: 100%;
+    @include flex(column, space-between, flex-end);
+
+    & small {
+      font-size: 0.75rem;
+    }
+  }
+
+  & a {
+    transition: v.$main-transition;
+    &:where(:hover, :focus) {
+      color: c.$lime-green;
+    }
+  }
+}
+
+@media (width < func.rem(768)) {
+  footer {
+    & .footer-wrap {
+      width: 100%;
+      @include flex(column, center, center);
+      gap: 2rem;
+    }
+
+    & .footer-navigation-logo {
+      @include flex(column, center, center);
+      gap: 2rem;
+    }
+
+    & .logos {
+      gap: 2rem;
+    }
+
+    & .footer-nav {
+      @include flex(column, center, center);
+      gap: 1rem;
+      text-align: center;
+    }
+
+    & .footer-btn-wrap {
+      gap: 2rem;
+    }
+  }
+}

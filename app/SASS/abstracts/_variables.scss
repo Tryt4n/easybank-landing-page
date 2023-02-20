@@ -1,0 +1,6 @@
+@use "../base/functions" as func;
+
+$desktop-content-max-width: 90dvw;
+$navbar-height: func.rem(72);
+
+$main-transition: 300ms ease-in-out;
