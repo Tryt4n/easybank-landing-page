@@ -54,7 +54,7 @@
       & h3 {
         margin-block: 1rem;
         transition: v.$main-transition;
-        &:where(:hover, :focus) {
+        &:where(:hover, :focus-visible) {
           color: c.$lime-green;
         }
       }

@@ -15,7 +15,7 @@ header {
   color: c.$grayish-blue;
   transition: v.$main-transition;
 
-  &:where(:hover, :focus) {
+  &:where(:hover, :focus-visible) {
     color: c.$dark-blue;
   }
 }
@@ -44,7 +44,7 @@ header {
       margin-left: 1em;
     }
 
-    &:where(:hover, :focus) {
+    &:where(:hover, :focus-visible) {
       color: c.$dark-blue;
       &::after {
         scale: 1;

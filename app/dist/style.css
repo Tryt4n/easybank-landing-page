@@ -105,7 +105,7 @@ header {
   color: hsl(233deg, 8%, 62%);
   transition: 300ms ease-in-out;
 }
-.main-navigation > *:where(:hover, :focus) {
+.main-navigation > *:where(:hover, :focus-visible) {
   color: hsl(233deg, 26%, 24%);
 }
 
@@ -131,10 +131,10 @@ header {
   .main-navigation > *:not(:first-child) {
     margin-left: 1em;
   }
-  .main-navigation > *:where(:hover, :focus) {
+  .main-navigation > *:where(:hover, :focus-visible) {
     color: hsl(233deg, 26%, 24%);
   }
-  .main-navigation > *:where(:hover, :focus)::after {
+  .main-navigation > *:where(:hover, :focus-visible)::after {
     scale: 1;
   }
   .hamburger-btn {
@@ -371,7 +371,7 @@ header {
   margin-block: 1rem;
   transition: 300ms ease-in-out;
 }
-.articles .article-element__text-wrapper h3:where(:hover, :focus) {
+.articles .article-element__text-wrapper h3:where(:hover, :focus-visible) {
   color: hsl(136deg, 65%, 51%);
 }
 
